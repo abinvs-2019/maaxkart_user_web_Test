@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <!--
+  <!--
       If you are serving your web app in a path other than the root, change the
       href value below to reflect the base path you are serving from.
 
@@ -14,30 +15,31 @@
       This is a placeholder for base href that will be replaced by the value of
       the `--base-href` argument provided to `flutter build`.
     -->
-    <base href="/">
+  <base href="/">
 
-    <meta charset="UTF-8">
-    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-    <meta name="description" content="A new Flutter project.">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
 
-    <!-- iOS meta tags & icons -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="maaxkart_shop_new">
-    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="maaxkart_shop_new">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png"/>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png" />
 
-    <title>maaxkart_shop_new</title>
-    <link rel="manifest" href="manifest.json">
+  <title>Maaxkart Shop</title>
+  <link rel="manifest" href="manifest.json">
 </head>
+
 <body>
-<!-- This script installs service_worker.js to provide PWA functionality to
+  <!-- This script installs service_worker.js to provide PWA functionality to
      application. For more information, see:
      https://developers.google.com/web/fundamentals/primers/service-workers -->
-<script>
-    var serviceWorkerVersion = '3041357006';
+  <script>
+    var serviceWorkerVersion = '2453728783';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -57,6 +59,11 @@
         // Otherwise, the browser will load the script multiple times,
         // potentially different versions.
         var serviceWorkerUrl = 'flutter_service_worker.js?v=' + serviceWorkerVersion;
+        navigator.serviceWorker.getRegistrations().then(function (registrations) { 
+          for (let registration of registrations) { 
+            registration.unregister() 
+          } 
+        });
         navigator.serviceWorker.register(serviceWorkerUrl)
           .then((reg) => {
             function waitForActivation(serviceWorker) {
@@ -100,32 +107,32 @@
       loadMainDartJs();
     }
 
-</script>
+  </script>
 
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-analytics.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyCQLwhxO4_Nnhs9xJ-0rJHe4mB5_ao3z5c",
-    authDomain: "vendor-c301d.firebaseapp.com",
-    projectId: "vendor-c301d",
-    storageBucket: "vendor-c301d.appspot.com",
-    messagingSenderId: "83767152037",
-    appId: "1:83767152037:web:937d7cd57ff9a2fbb12c4c",
-    measurementId: "G-MYEHH7LGJ6"
-  };
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQLwhxO4_Nnhs9xJ-0rJHe4mB5_ao3z5c",
+      authDomain: "vendor-c301d.firebaseapp.com",
+      projectId: "vendor-c301d",
+      storageBucket: "vendor-c301d.appspot.com",
+      messagingSenderId: "83767152037",
+      appId: "1:83767152037:web:937d7cd57ff9a2fbb12c4c",
+      measurementId: "G-MYEHH7LGJ6"
+    };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
-<!-- <script>
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+  <!-- <script>
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", function () {
       // navigator.serviceWorker.register("/flutter_service_worker.js");
@@ -134,4 +141,5 @@
   }
   </script> -->
 </body>
+
 </html>
