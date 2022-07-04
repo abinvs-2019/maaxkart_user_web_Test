@@ -37,7 +37,7 @@
      application. For more information, see:
      https://developers.google.com/web/fundamentals/primers/service-workers -->
 <script>
-    var serviceWorkerVersion = '478626135';
+    var serviceWorkerVersion = '3041357006';
     var scriptLoaded = false;
     function loadMainDartJs() {
       if (scriptLoaded) {
@@ -101,5 +101,37 @@
     }
 
 </script>
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.4/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCQLwhxO4_Nnhs9xJ-0rJHe4mB5_ao3z5c",
+    authDomain: "vendor-c301d.firebaseapp.com",
+    projectId: "vendor-c301d",
+    storageBucket: "vendor-c301d.appspot.com",
+    messagingSenderId: "83767152037",
+    appId: "1:83767152037:web:937d7cd57ff9a2fbb12c4c",
+    measurementId: "G-MYEHH7LGJ6"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+<!-- <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      // navigator.serviceWorker.register("/flutter_service_worker.js");
+      navigator.serviceWorker.register("/firebase-messaging-sw.js");
+    });
+  }
+  </script> -->
 </body>
 </html>
